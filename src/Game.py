@@ -1,0 +1,1 @@
+# This class holds the functions and attributes of game rules, time control and scoring. 
