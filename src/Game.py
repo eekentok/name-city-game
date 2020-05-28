@@ -1,5 +1,6 @@
 # This class holds the functions and attributes of game rules, time control and scoring. 
 import Player as p
+import random, string
 
 player_list = []
 
@@ -10,11 +11,14 @@ class Game:
         self.number_of_rounds = int(input("Enter the number of rounds: "))
         self.game_type = input("Enter the type of game: ")
         self.time_limit = 30
-    
+        
     def addPlayers(self):
         for i in range(self.number_of_players):
             name = input("Enter your username: ")
             player_list.append(p.Player(name, i,0))
+
+    def letterRandomizer(self):
+        return random.choice(string.ascii_uppercase)
 
 Game().addPlayers()
 
