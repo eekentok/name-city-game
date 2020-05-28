@@ -11,5 +11,5 @@ class Player:
 p1 = Player("ehemingway", 1, 0)
 p2 = Player("szweig", 2, 0)
 
-print(p1.username + " id = " + str(p1.player_id) + ". His score is " + str(p1.score))
-print(p2.username + " id = " + str(p2.player_id) + ". His score is " + str(p2.score))
+#print(p1.username + " id = " + str(p1.player_id) + ". His score is " + str(p1.score))
+#print(p2.username + " id = " + str(p2.player_id) + ". His score is " + str(p2.score))

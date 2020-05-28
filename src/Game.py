@@ -5,35 +5,42 @@ import random, string
 player_list = []
 
 class Game:
-
+    
     def __init__(self):
-        self.number_of_players = int(input("Enter the number of players: "))
-        self.number_of_rounds = int(input("Enter the number of rounds: "))
-        self.game_type = input("Enter the type of game: ")
         self.time_limit = 30
-        
+
+    def initGame(self, number_of_players, number_of_rounds, game_type):
+        self.number_of_players = number_of_players
+        self.number_of_rounds = number_of_rounds
+        self.game_type = game_type
+
     def addPlayers(self):
         for i in range(self.number_of_players):
-            name = input("Enter your username: ")
+            name = input("Enter the player # " + str(i+1) + " username: ")
             player_list.append(p.Player(name, i,0))
 
     def letterRandomizer(self):
         return random.choice(string.ascii_uppercase)
+    
+    def gameIntro(self):
+        print("Welcome to the Name-City Game")
+        print("-----------------------------")
+        print("Before game starts you will be demanded following information:")
+        print("1. # of Players")
+        print("2. # of Rounds")
+        print("3. Game Mode [0:Classic, 1:Music, 2:Sports]")
+        print("4. Time Limit per Round")
+        print("Enjoy the game :)")
+        print("-----------------------------")
 
-Game().addPlayers()
+game = Game()
+game.gameIntro()
 
-'''
-    def __init__(self, number_of_players, number_of_rounds, game_type, time_limit):
-        self.number_of_players = number_of_players
-        self.number_of_rounds = number_of_rounds
-        self.game_type = game_type
-        self.time_limit = time_limit
+number_of_players = int(input("Enter the number of players: "))
+number_of_rounds = int(input("Enter the number of rounds: "))
+game_type = int(input("Enter the type of game: "))
 
-        
-    def createGame(self):
-        size = input("Enter the number of players: ")
-        length =  input("Enter the number of rounds: ")
-        mode = input("Enter the type of game: ")
-        limit = 30
-        return Game(size, length, mode, limit)
-'''
+game.initGame(number_of_players, number_of_rounds, game_type)
+game.addPlayers()
+print("Random letter is to be decided...")
+print(game.letterRandomizer())
